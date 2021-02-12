@@ -1,0 +1,99 @@
+﻿<Window x:Class="ICpEP_Night_Results_Application_2020.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ICpEP_Night_Results_Application_2020"
+        mc:Ignorable="d"
+        Name="myMainWindow"
+        Title="MainWindow" Height="768" Width="1360" Background="Black" WindowState="Maximized" WindowStyle="None" Closing="myMainWindow_Closing">
+    <Grid x:Name="grid" SizeChanged="MainGrid_SizeChanged">
+        <Grid.LayoutTransform>
+            <ScaleTransform x:Name="ApplicationScaleTransform"
+                        CenterX="0"
+                        CenterY="0"
+                        ScaleX="{Binding ElementName=myMainWindow, Path=ScaleValue}"
+                        ScaleY="{Binding ElementName=myMainWindow, Path=ScaleValue}" />
+        </Grid.LayoutTransform>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.2*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height=".8*"/>
+            <RowDefinition Height="12*"/>
+        </Grid.RowDefinitions>
+
+        <TextBlock Grid.Row="1" Text="I N S T I T U T E   O F   C O M P U T E R   E N G I N E E R S   O F   T H E   P H I L I P P I N E S" FontSize="45" Foreground="White" FontFamily="AR BONNIE" FontWeight="ExtraBold" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        <TextBlock Grid.Row="2" Text="S T U D E N T   E D I T I O N - U S L S" FontSize="45" Foreground="White" FontFamily="AR BONNIE" FontWeight="ExtraBold" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        <TextBlock Grid.Row="3" Text="V O T I N G  R E S U L T S" FontSize="30" Foreground="White" FontFamily="AR BONNIE" FontWeight="Normal" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        <Grid Grid.Row="4">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width=".6*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <Grid Grid.Column="0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="2*"/>
+                    <RowDefinition Height=".3*"/>
+                    <RowDefinition Height="2*"/>
+                    <RowDefinition Height=".3*"/>
+                    <RowDefinition Height="2*"/>
+                    <RowDefinition Height=".3*"/>
+                </Grid.RowDefinitions>
+
+                <TextBlock Grid.Row="0" x:Name="tb1m" Text="0%" FontSize="50" Foreground="White" VerticalAlignment="Bottom" HorizontalAlignment="Left" Opacity=".7" Margin="180 0 0 10"/>
+                <Image Grid.Row="0" x:Name="img1m" Source="Resources/male icon.png" HorizontalAlignment="Left" Opacity=".7" Margin="5"/>
+                <ProgressBar Grid.Row="0" x:Name="pbar1m" Opacity=".7" Margin="180 0 0 5" Height="10" VerticalAlignment="Bottom" Background="Transparent" Foreground="DeepSkyBlue" BorderBrush="Transparent"/>
+
+                <TextBlock Grid.Row="2" x:Name="tb2m" Text="0%" FontSize="50" Foreground="White" VerticalAlignment="Bottom" HorizontalAlignment="Left" Opacity=".7" Margin="180 0 0 10"/>
+                <Image Grid.Row="2" x:Name="img2m" Source="Resources/male icon.png" HorizontalAlignment="Left" Opacity=".7" Margin="5"/>
+                <ProgressBar Grid.Row="2" x:Name="pbar2m" Opacity=".7" Margin="180 0 0 5" Height="10" VerticalAlignment="Bottom" Background="Transparent" Foreground="DeepSkyBlue" BorderBrush="Transparent"/>
+
+                <TextBlock Grid.Row="4" x:Name="tb5m" Text="0%" FontSize="50" Foreground="White" VerticalAlignment="Bottom" HorizontalAlignment="Left" Opacity=".7" Margin="180 0 0 10"/>
+                <Image Grid.Row="4" x:Name="img5m" Source="Resources/male icon.png" HorizontalAlignment="Left" Opacity=".7" Margin="5"/>
+                <ProgressBar Grid.Row="4" x:Name="pbar5m" Opacity=".7" Margin="180 0 0 5" Height="10" VerticalAlignment="Bottom" Background="Transparent" Foreground="DeepSkyBlue" BorderBrush="Transparent"/>
+            </Grid>
+
+            <Image Grid.Column="1" Source="Resources/logo.png" Width="400" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0 -10 0 0"/>
+            <Image Grid.Column="1" Source="Resources/royal.png" Width="250" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="0 0 0 0"/>
+
+            <Grid Grid.Column="2">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="2*"/>
+                    <RowDefinition Height=".3*"/>
+                    <RowDefinition Height="2*"/>
+                    <RowDefinition Height=".3*"/>
+                    <RowDefinition Height="2*"/>
+                    <RowDefinition Height=".3*"/>
+                </Grid.RowDefinitions>
+
+                <TextBlock Grid.Row="0" x:Name="tb1f" Text="0%" FontSize="50" Foreground="White" VerticalAlignment="Bottom" HorizontalAlignment="Right" Opacity=".7" Margin="0 0 180 10"/>
+                <Image Grid.Row="0" x:Name="img1f" Source="Resources/female icon.png" HorizontalAlignment="Right" Opacity=".7" Margin="5"/>
+                <ProgressBar Grid.Row="0" x:Name="pbar1f" Opacity=".7" Margin="0 0 180 5" Height="10" VerticalAlignment="Bottom" Background="Transparent" Foreground="DeepSkyBlue" BorderBrush="Transparent">
+                    <ProgressBar.LayoutTransform>
+                        <RotateTransform Angle="180" />
+                    </ProgressBar.LayoutTransform>
+                </ProgressBar>
+
+                <TextBlock Grid.Row="2" x:Name="tb2f" Text="0%" FontSize="50" Foreground="White" VerticalAlignment="Bottom" HorizontalAlignment="Right" Opacity=".7" Margin="0 0 180 10"/>
+                <Image Grid.Row="2" x:Name="img2f" Source="Resources/female icon.png" HorizontalAlignment="Right" Opacity=".7" Margin="5"/>
+                <ProgressBar Grid.Row="2" x:Name="pbar2f" Opacity=".7" Margin="0 0 180 5" Height="10" VerticalAlignment="Bottom" Background="Transparent" Foreground="DeepSkyBlue" BorderBrush="Transparent">
+                    <ProgressBar.LayoutTransform>
+                        <RotateTransform Angle="180" />
+                    </ProgressBar.LayoutTransform>
+                </ProgressBar>
+
+                <TextBlock Grid.Row="4" x:Name="tb5f" Text="0%" FontSize="50" Foreground="White" VerticalAlignment="Bottom" HorizontalAlignment="Right" Opacity=".7" Margin="0 0 180 10"/>
+                <Image Grid.Row="4" x:Name="img5f" Source="Resources/female icon.png" HorizontalAlignment="Right" Opacity=".7" Margin="5"/>
+                <ProgressBar Grid.Row="4" x:Name="pbar5f" Opacity=".7" Margin="0 0 180 5" Height="10" VerticalAlignment="Bottom" Background="Transparent" Foreground="DeepSkyBlue" BorderBrush="Transparent">
+                    <ProgressBar.LayoutTransform>
+                        <RotateTransform Angle="180" />
+                    </ProgressBar.LayoutTransform>
+                </ProgressBar>
+            </Grid>
+        </Grid>
+    </Grid>
+</Window>
